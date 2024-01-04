@@ -1,0 +1,47 @@
+/* Postcard.css */
+
+.card {
+    width: 39rem;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+  
+  .owner-section {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .owner-section span {
+    margin-left: 10px;
+    font-weight: bold;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .action-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .action-icons {
+    display: flex;
+    gap: 30px;
+  }
+  .input > input {
+     border: none;
+     width: 380px;
+     font-size: small;
+  }
+  .input > button {
+    border: none;
+    
+ }

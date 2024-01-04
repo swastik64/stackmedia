@@ -1,0 +1,24 @@
+.loader > div {
+    display: flex;
+    
+    align-items: center;
+    
+    justify-content: center;
+  }
+  
+   @keyframes arrows {
+    0%,
+    100% {
+      color: black;
+      transform: translateY(0);
+    }
+    50% {
+      color: #3AB493;
+      transform: translateY(20px);
+    }
+  }
+  
+ .loader > span {
+    
+    animation: arrows 1s var(--delay) infinite ease-in;
+  }

@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Adjust the height as needed */
+    background-color: #f0f0f0; /* Add your preferred background color */
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Adjust the space between icons */
+  }
+  
+  li {
+    padding: 10px;
+  }
+  
+  li a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Add additional styles for your icons if needed */
+  

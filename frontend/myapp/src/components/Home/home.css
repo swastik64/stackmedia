@@ -1,0 +1,21 @@
+
+.left-section, .right-section {
+   
+    box-sizing: border-box;
+}
+
+.left-section {
+    flex: 8; /* 80% of the width */
+    background-color: #f0f0f0;
+}
+
+.right-section {
+    padding: 20px;
+    flex: 2; /* 20% of the width */
+    background-color: #e0e0e0;
+}
+.container {
+    height: 100%;
+    flex:1;
+    display: flex;
+}
