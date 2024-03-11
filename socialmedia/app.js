@@ -5,7 +5,7 @@ const cors = require('cors');
 const path = require('path');
 
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3001' }));
+app.use(cors({ credentials: true, origin: 'https://stackmedia.vercel.app/' }));
 
 require("dotenv").config({ path: "./config/config.env" });
 const errorhandler = require("./middleware/error.js");
