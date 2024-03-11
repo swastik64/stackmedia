@@ -2,9 +2,10 @@ const express = require("express");
 const app = express();
 const cookieparser = require("cookie-parser");
 const cors = require('cors');
+const path = require('path');
 
 
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: 'http://localhost:3001' }));
 
 require("dotenv").config({ path: "./config/config.env" });
 const errorhandler = require("./middleware/error.js");
@@ -18,4 +19,9 @@ app.use("/api/v1", postroute);
 app.use("/api/v1", userroute);
 
 app.use(errorhandler);
+app.use(express.static(path.join(__dirname, '../frontend/myapp/build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, "../frontend/myapp/build/index.html"));
+});
 module.exports = app;

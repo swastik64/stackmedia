@@ -1,8 +1,10 @@
+
 import React, { useState, useEffect } from 'react';
 import './login.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginfailure, loginrequest, loginsuccess } from '../../reducers/user';
 import { Link } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 
 export const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,24 +15,21 @@ export const Login = () => {
     e.preventDefault();
     try {
       dispatch(loginrequest());
-
-      const res = await fetch("http://localhost:5000/api/v1/login", {
-        method: 'POST',
+      console.log("first");
+      const response = await axios.post("http://localhost:5000/api/v1/login", {
+        email: email,
+        password: password
+      }, {
         headers: {
           'Content-Type': 'application/json',
         },
-        credentials: 'include', // Include credentials for CORS requests
-        body: JSON.stringify({ email: email, password: password }),
+        withCredentials: true, // Include credentials for CORS requests
       });
-
-      if (!res.ok) {
-        throw new Error(`HTTP error! Status: ${res.status}`);
-      }
-
-      const data = await res.json();
-      dispatch(loginsuccess(data));
+      console.log(response.data);
+      dispatch(loginsuccess(response.data));
     } catch (err) {
-      console.log(err);
+      console.error(err);
+      console.log("2nd");
       dispatch(loginfailure(err));
     }
   };
